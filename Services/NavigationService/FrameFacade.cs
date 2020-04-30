@@ -10,7 +10,6 @@ using Template10.Services.SerializationService;
 using System.Runtime.CompilerServices;
 using Windows.UI.Xaml.Media;
 using System.Diagnostics;
-using System.ComponentModel;
 
 namespace Template10.Services.NavigationService
 {
@@ -43,8 +42,8 @@ namespace Template10.Services.NavigationService
             FrameId = id;
         }
 
-        public event EventHandler<HandledEventArgs> BackRequested;
-        public void RaiseBackRequested(HandledEventArgs args)
+        public event EventHandler<HandledRoutedEventArgs> BackRequested;
+        public void RaiseBackRequested(HandledRoutedEventArgs args)
         {
             BackRequested?.Invoke(this, args);
 
@@ -54,8 +53,8 @@ namespace Template10.Services.NavigationService
             }
         }
 
-        public event EventHandler<HandledEventArgs> ForwardRequested;
-        public void RaiseForwardRequested(HandledEventArgs args)
+        public event EventHandler<HandledRoutedEventArgs> ForwardRequested;
+        public void RaiseForwardRequested(HandledRoutedEventArgs args)
         {
             ForwardRequested?.Invoke(this, args);
 
